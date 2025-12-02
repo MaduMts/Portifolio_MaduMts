@@ -1,0 +1,151 @@
+/* ================= PORTIFOLIO MADU ============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+/* ================ PALETA SITE ================= */
+:root {
+  --blue: #0d0d16;
+  --purple: #7b4cfc;
+  --white: #ffffff;
+  --white2: #d9d9d9;
+}
+
+
+/* ================= BODY ===================== */
+body {
+  background-color: var(--blue);
+  color: var(--white2);
+}
+
+
+
+
+
+/* ================= NAV SECTION ================== */
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  position: fixed;
+  top: 50px; 
+}
+
+
+
+.search-bar {
+  width: 70%;
+  max-width: 1200px;
+  background: #181826;
+  border-radius: 12px;
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  box-shadow: 0 0 10px rgba(123, 76, 252, 0.3);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: var(--white2);
+  text-decoration: none;
+  padding: 6px 10px;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--purple);
+}
+
+
+
+/* ================= HERO SECTION ================== */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  min-height: calc(100vh - 130px); 
+  padding: 0 10%;
+  margin-top: 130px; 
+}
+
+.hero-maintext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -30px; 
+}
+
+.hero-name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #dccbff;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #9b8fff;
+  opacity: 0.85;
+  letter-spacing: 1px;
+}
+
+
+/* Avatar */
+.hero-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.avatarmadu {
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 35px rgba(167, 139, 250, 0.45));
+  transition: transform .35s ease;
+}
+
+
+
+
+
+/* ================= ABOUT ME SECTION ================== */
+
+.aboutme {
+  width: 80%;
+  max-width: 900px;
+  margin: 180px auto 80px;
+  text-align: center;
+}
+
+.title-aboutme {
+  font-size: 2.4rem;
+  color: #dccbff;
+  margin-bottom: 20px;
+}
+
+.description-aboutme {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--white2);
+  margin-bottom: 60px;
+  opacity: 0.9;
+}
