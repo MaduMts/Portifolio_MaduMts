@@ -36,6 +36,9 @@ body {
   padding: 25px 0;
   position: fixed;
   top: 50px; 
+  left: 0;
+  z-index: 100;
+  background: transparent;
 }
 
 
@@ -113,8 +116,6 @@ nav a:hover {
   align-items: center;
 }
 
-
-
 .avatarmadu {
   width: 400px;
   height: auto;
@@ -123,6 +124,38 @@ nav a:hover {
   transition: transform .35s ease;
 }
 
+.avatarmadu:hover {
+  transform: scale(1.07);
+}
+
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #9b8fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: #dccbff;
+  font-size: 1.25rem;
+}
+
+.social-icon:hover {
+  background: #9b8fff;
+  color: #1a1a1a;
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(155, 143, 255, 0.55);
+}
 
 
 
