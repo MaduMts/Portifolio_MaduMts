@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Using a clean and neutral base font */
 }
 
-
 /* ================ PALETA SITE ================= */
+/* Main color variables so I can change the aesthetic easily later */
 :root {
   --blue: #0d0d16;
   --purple: #7b4cfc;
@@ -15,51 +15,60 @@
   --white2: #d9d9d9;
 }
 
-
 /* ================= BODY ===================== */
+/* Dark minimal background + soft text for readability */
 body {
   background-color: var(--blue);
   color: var(--white2);
 }
 
 
-
-
-
 /* ================= NAV SECTION ================== */
-
-/* NAVBAR */
+/* Navbar aligned to center, floating slightly lower for aesthetic */
 .navbar {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 25px 0;
+  height: 75px;
+
   position: fixed;
-  top: 50px; 
+  top: 40px; /* Custom aesthetic choice — makes the nav float */
   left: 0;
   z-index: 100;
-  background: transparent;
+
+  transition: transform 0.55s ease-in-out, background 0.3s ease;
+  background: transparent; /* Transparent until scrolling */
 }
 
+/* When scrolling down, hide navbar smoothly */
+.navbar.hide {
+  transform: translateY(-100%);
+}
 
-
+/* Main container inside the navbar */
 .search-bar {
   width: 70%;
   max-width: 1200px;
-  background: #181826;
+  background: #181826dd; /* Slight opacity for glass effect */
   border-radius: 12px;
-  padding: 12px 25px;
+  height: 55px; /* Keeps nav compact */
+  padding: 0 22px; /* Horizontal spacing only */
+
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end; /* Align items to the right */
+
   box-shadow: 0 0 10px rgba(123, 76, 252, 0.3);
+  backdrop-filter: blur(6px); /* Glassmorphism */
 }
 
+/* Menu links layout */
 nav {
   display: flex;
   gap: 30px;
 }
 
+/* Individual nav links */
 nav a {
   color: var(--white2);
   text-decoration: none;
@@ -69,30 +78,48 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--purple);
+  color: var(--purple); /* Soft hover highlight */
 }
 
 
+/* ================= MENU HAMBÚRGUER ================= */
+/* Hidden on desktop — only shown on mobile */
+.hamburguer {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.9rem;
+  color: var(--white2);
+  transition: 0.3s ease;
+}
+
+.hamburguer:active {
+  transform: scale(0.92); /* Small click feedback */
+}
+
 
 /* ================= HERO SECTION ================== */
-
+/* Main hero layout: avatar + text aligned side-by-side */
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
-  min-height: calc(100vh - 130px); 
+  gap: 80px; /* Space between text and avatar */
+  min-height: calc(100vh - 110px); /* Fits full screen minus navbar space */
   padding: 0 10%;
-  margin-top: 130px; 
+  margin-top: 120px; /* Prevents overlap with fixed nav */
 }
 
+/* Hero text container */
 .hero-maintext {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -30px; 
+  margin-top: -30px; /* Slight shift up for better balance */
 }
 
+/* Big name title */
 .hero-name {
   font-size: 4rem;
   font-weight: 700;
@@ -100,22 +127,23 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+/* Subtitle / job description */
 .hero-description {
   font-size: 1.4rem;
   font-weight: 400;
   color: #9b8fff;
   opacity: 0.85;
-  letter-spacing: 1px;
+  letter-spacing: 1px; /* Subtle elegance */
 }
 
-
-/* Avatar */
+/* Avatar area */
 .hero-avatar {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Avatar styling — circular with glow */
 .avatarmadu {
   width: 400px;
   height: auto;
@@ -125,17 +153,17 @@ nav a:hover {
 }
 
 .avatarmadu:hover {
-  transform: scale(1.07);
+  transform: scale(1.07); /* Soft hover zoom */
 }
 
-
-/* Social Icons */
+/* Social icons group */
 .social-links {
   display: flex;
   gap: 18px;
   margin-top: 22px;
 }
 
+/* Each social icon — circle with border */
 .social-icon {
   width: 44px;
   height: 44px;
@@ -153,32 +181,100 @@ nav a:hover {
 .social-icon:hover {
   background: #9b8fff;
   color: #1a1a1a;
-  transform: translateY(-4px);
+  transform: translateY(-4px); /* Floating effect */
   box-shadow: 0 0 18px rgba(155, 143, 255, 0.55);
 }
 
 
-
-
 /* ================= ABOUT ME SECTION ================== */
-
+/* Centered and clean section with controlled width */
 .aboutme {
   width: 80%;
   max-width: 900px;
-  margin: 180px auto 80px;
+  margin: 180px auto 80px; /* Spacing above and below */
   text-align: center;
 }
 
+/* Section title */
 .title-aboutme {
   font-size: 2.4rem;
   color: #dccbff;
   margin-bottom: 20px;
 }
 
+/* About me text */
 .description-aboutme {
   font-size: 1.15rem;
   line-height: 1.7;
   color: var(--white2);
   margin-bottom: 60px;
   opacity: 0.9;
+}
+
+
+/* ==================== MOBILE RESPONSIVE ==================== */
+@media (max-width: 900px) {
+
+  /* Show hamburger on mobile */
+  .hamburguer {
+    display: block;
+    margin-left: auto; /* pushes it to the right */
+  }
+
+  /* Adjust nav container spacing */
+  .search-bar {
+    justify-content: flex-end;
+    padding: 10px 18px;
+  }
+
+  /* Mobile dropdown menu animation */
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 50%;
+    transform: translateX(50%) translateY(-20px);
+    background: #181826f2;
+    width: 70%;
+    border-radius: 10px;
+    padding: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+
+    opacity: 0; /* Hidden by default */
+    pointer-events: none;
+
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  /* Visible dropdown state */
+  nav.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(50%) translateY(0);
+  }
+
+  /* Stack hero content vertically */
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  /* Smaller name font on mobile */
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  /* Center social icons */
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Smaller avatar for mobile */
+  .avatarmadu {
+    width: 260px;
+  }
 }
