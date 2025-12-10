@@ -1,3 +1,4 @@
+
 /* ================= PORTIFOLIO MADU ============== */
 * {
   margin: 0;
@@ -42,7 +43,8 @@ body {
 
 /* When scrolling down, hide navbar smoothly */
 .navbar.hide {
-  transform: translateY(-100%);
+  transform: translateY(calc(-100% - 40px));
+  transition-delay: 0.1s;
 }
 
 /* Main container inside the navbar */
@@ -275,6 +277,6 @@ nav a:hover {
 
   /* Smaller avatar for mobile */
   .avatarmadu {
-    width: 260px;
+    width: 350px;
   }
 }
