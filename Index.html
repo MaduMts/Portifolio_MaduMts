@@ -9,7 +9,7 @@
 
     <!-- Adding Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+   
     <title>Portfolio - Madu Matos</title>
 </head>
 
@@ -20,12 +20,14 @@
     <header class="navbar">
         <div class="search-bar">
 
-            <!-- Mobile hamburger button -->
-            <!-- This only appears on smaller screens -->
-            <button class="hamburguer" id="hamburgerBtn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+             <!-- Typing animation container -->
+            <!-- This text will be dynamically typed and deleted -->
+            <div class="nav-typing">
+                <span id="typingText"></span>
+                <span class="cursor">|</span>
+            </div>
             
+
             <!-- Menu links -->
             <!-- These collapse into the mobile menu when needed -->
             <nav id="navMenu">
@@ -35,6 +37,13 @@
                 <a href="#skills">Skills</a>
             </nav>
 
+
+            <!-- Mobile hamburger button -->
+            <!-- This only appears on smaller screens -->
+            <button class="hamburguer" id="hamburgerBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
         </div>
     </header>
 

@@ -59,6 +59,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end; /* Align items to the right */
+  position: relative;
 
   box-shadow: 0 0 10px rgba(123, 76, 252, 0.3);
   backdrop-filter: blur(6px); /* Glassmorphism */
@@ -81,6 +82,33 @@ nav a {
 
 nav a:hover {
   color: var(--purple); /* Soft hover highlight */
+}
+
+/* =================== NAVBAR TYPING EFFECT =================== */
+.nav-typing {
+  font-family: monospace;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.tag {
+  color: #f4c542; /* amarelo suave, idêntico à imagem */
+  font-weight: 600;
+}
+
+.cursor {
+  color: #ffffff;
+  font-weight: 400;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 
